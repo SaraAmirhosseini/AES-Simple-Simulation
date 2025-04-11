@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>AES Encryption Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <main>
+        <h1 class="title">AES Encryption Chat</h1>
+        <section class="keys-section">
+            <h2 class="key-title">Encryption Key</h2>
+            <div class="key-container">
+                <pre id="encryptionKey"></pre>
+                <p class="public-key-label">/* Shahed CE Bachelor */</p>
+            </div>
+        </section>
+        <section class="private-section">
+            <h2 class="private-title">Enter Key</h2>
+            <div id="privateKey-container">
+                <input type="text" id="privateKey" placeholder="Enter 'parsara' to decrypt" aria-label="Private Key Input">
+                <i id="privateKey-icon" class="fas fa-times invalid"></i>
+            </div>
+        </section>
+        <section class="chat-section">
+            <h2 class="chat-title">Messages</h2>
+            <div class="chat-window" aria-live="polite"></div>
+        </section>
+    </main>
+    <script src="./scripts.js"></script>
+</body>
+</html>
