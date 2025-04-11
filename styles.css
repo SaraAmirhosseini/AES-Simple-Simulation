@@ -1,0 +1,197 @@
+/* Set a gradient background with pastel violet, green, and orange */
+body {
+    background: linear-gradient(135deg, #CEB5FF, #B5FFD9, #FFD9B5);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Style the main container */
+main {
+    background: white;
+    width: 45%;
+    min-height: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 5px rgba(54, 22, 100, 0.2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation for the main container */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Style titles with a dark violet for contrast */
+.title, .key-title, .private-title, .chat-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #6A5ACD; /* Dark violet */
+    text-align: center;
+}
+
+/* Public key styling with pastel green outline */
+#publicKey {
+    height: 85px;
+    width: 100%;
+    border: none;
+    outline: 2px solid #B5FFD9; /* Pastel green */
+    border-radius: 0.5rem;
+    font-size: 12px;
+    padding: 8px;
+    background: #f8f8f8;
+    overflow: auto;
+    margin: 0;
+}
+
+/* Style the phrase below the public key */
+.public-key-label {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #CEB5FF; /* Pastel violet */
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Private key input with dynamic outline colors */
+#privateKey-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#privateKey {
+    height: 2rem;
+    width: auto;
+    border: none;
+    outline: 2px solid #FF5252; /* Soft red for incorrect */
+    border-radius: 0.4rem;
+    padding: 8px 10px;
+    font-size: 20px;
+    transition: outline-color 0.3s;
+    text-align: center;
+}
+
+#privateKey.valid {
+    outline-color: #4CAF50; /* Soft green for correct */
+}
+
+#privateKey-icon {
+    position: absolute;
+    right: -30px;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+#privateKey-icon.invalid {
+    color: #FF5252; /* Red for incorrect */
+    transform: rotate(0deg);
+}
+
+#privateKey-icon.valid {
+    color: #4CAF50; /* Green for correct */
+    transform: rotate(360deg);
+}
+
+/* Chat window with pastel violet outline */
+.chat-window {
+    height: 250px;
+    width: calc(100% - 20px);
+    border: none;
+    outline: 2px solid #CEB5FF; /* Pastel violet */
+    border-radius: 0.5rem;
+    padding: 10px;
+    overflow-y: auto;
+    background: #f8f8f8;
+}
+
+/* Base message styling with shadow and animation */
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    word-break: break-all;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Encrypted messages from Amirhossein */
+.message.ahm {
+    background-color: rgba(255, 183, 77, 0.3); /* Pastel orange */
+}
+
+/* Decrypted messages from Amirhossein */
+.message.ahm.decrypted {
+    background-color: rgba(173, 216, 230, 0.3); /* Pastel blue */
+}
+
+/* Encrypted messages from Sara */
+.message.sara {
+    background-color: rgba(255, 99, 71, 0.3); /* Pastel red */
+}
+
+/* Decrypted messages from Sara */
+.message.sara.decrypted {
+    background-color: rgba(221, 160, 221, 0.3); /* Pastel violet */
+}
+
+/* Style icons within messages */
+.message i {
+    margin-right: 10px; /* Adjusted margin for better spacing */
+    color: #6A5ACD; /* Dark violet */
+}
+
+/* Hover effect for messages */
+.message:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Slide-in animation for messages */
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 600px) {
+    main {
+        width: 90%; /* Take up more space on small screens */
+        padding: 15px; /* Slightly less padding */
+    }
+
+    .title, .key-title, .private-title, .chat-title {
+        font-size: 1.1rem; /* Slightly smaller titles */
+    }
+
+    #publicKey {
+        height: 80px; /* Reduced for smaller screens */
+        font-size: 12px; /* Smaller font */
+        width: 80%;
+        margin: auto;
+    }
+
+    #privateKey {
+        height: 2rem; /* Slightly smaller */
+        font-size: 16px; /* Smaller font */
+    }
+
+    .chat-window {
+        height: 250px; /* Reduced for smaller screens */
+    }
+
+    .message {
+        font-size: 14px; /* Smaller font */
+    }
+}
